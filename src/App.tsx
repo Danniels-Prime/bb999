@@ -3,13 +3,15 @@ import Starfield from './components/Starfield'
 import SoundsPage from './components/SoundsPage'
 import TypeShip from './components/TypeShip'
 import RecordCompare from './components/RecordCompare'
+import BlendPractice from './components/BlendPractice'
 
-type View = 'sounds' | 'typeship' | 'record'
+type View = 'sounds' | 'typeship' | 'record' | 'blend'
 
 const NAV_ITEMS: { id: View; label: string; icon: string }[] = [
-  { id: 'sounds',   label: 'PhonicsLand', icon: '🌌' },
-  { id: 'typeship', label: 'TypeShip',    icon: '🚀' },
-  { id: 'record',   label: 'Record & Compare', icon: '🎤' },
+  { id: 'sounds',   label: 'Phonics',      icon: '🌌' },
+  { id: 'blend',    label: 'Blend',        icon: '🔤' },
+  { id: 'typeship', label: 'TypeShip',     icon: '🚀' },
+  { id: 'record',   label: 'Record',       icon: '🎤' },
 ]
 
 export default function App() {
@@ -19,7 +21,6 @@ export default function App() {
     <div style={{ minHeight: '100vh', position: 'relative' }}>
       <Starfield />
 
-      {/* Header */}
       <header style={styles.header}>
         <div style={styles.logo}>
           <span style={styles.logoIcon}>✦</span>
@@ -42,9 +43,9 @@ export default function App() {
         </nav>
       </header>
 
-      {/* Content */}
       <main style={styles.main}>
         {view === 'sounds'   && <SoundsPage />}
+        {view === 'blend'    && <BlendPractice />}
         {view === 'typeship' && <TypeShip />}
         {view === 'record'   && <RecordCompare />}
       </main>
@@ -54,68 +55,37 @@ export default function App() {
 
 const styles: Record<string, React.CSSProperties> = {
   header: {
-    position: 'sticky',
-    top: 0,
-    zIndex: 100,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    gap: '12px',
-    padding: '14px 24px',
-    background: 'rgba(5, 5, 16, 0.85)',
-    backdropFilter: 'blur(12px)',
+    position: 'sticky', top: 0, zIndex: 100,
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+    flexWrap: 'wrap', gap: '12px', padding: '14px 24px',
+    background: 'rgba(5, 5, 16, 0.85)', backdropFilter: 'blur(12px)',
     borderBottom: '1px solid rgba(110, 70, 240, 0.25)',
   },
-  logo: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-  },
+  logo: { display: 'flex', alignItems: 'center', gap: '10px' },
   logoIcon: {
-    fontSize: '24px',
-    color: '#a78bfa',
-    animation: 'spin-slow 8s linear infinite',
-    display: 'inline-block',
+    fontSize: '24px', color: '#a78bfa',
+    animation: 'spin-slow 8s linear infinite', display: 'inline-block',
   },
   logoText: {
-    fontFamily: 'Orbitron, monospace',
-    fontSize: '1.3rem',
-    fontWeight: 700,
+    fontFamily: 'Orbitron, monospace', fontSize: '1.3rem', fontWeight: 700,
     background: 'linear-gradient(90deg, #a78bfa, #06b6d4)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
+    WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
   },
-  nav: {
-    display: 'flex',
-    gap: '8px',
-    flexWrap: 'wrap',
-  },
+  nav: { display: 'flex', gap: '8px', flexWrap: 'wrap' },
   navBtn: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '6px',
-    padding: '8px 16px',
-    borderRadius: '20px',
+    display: 'flex', alignItems: 'center', gap: '6px',
+    padding: '8px 16px', borderRadius: '20px',
     border: '1px solid rgba(110, 70, 240, 0.3)',
-    background: 'transparent',
-    color: '#8888bb',
-    fontSize: '0.85rem',
-    fontWeight: 600,
-    transition: 'all 0.2s',
-    cursor: 'pointer',
+    background: 'transparent', color: '#8888bb',
+    fontSize: '0.85rem', fontWeight: 600, transition: 'all 0.2s', cursor: 'pointer',
   },
   navBtnActive: {
     background: 'rgba(124, 58, 237, 0.25)',
     border: '1px solid rgba(124, 58, 237, 0.7)',
-    color: '#e4e4ff',
-    boxShadow: '0 0 16px rgba(124, 58, 237, 0.35)',
+    color: '#e4e4ff', boxShadow: '0 0 16px rgba(124, 58, 237, 0.35)',
   },
   main: {
-    position: 'relative',
-    zIndex: 1,
-    padding: '24px 16px',
-    maxWidth: '1400px',
-    margin: '0 auto',
+    position: 'relative', zIndex: 1,
+    padding: '24px 16px', maxWidth: '1400px', margin: '0 auto',
   },
 }
