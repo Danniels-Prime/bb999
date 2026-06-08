@@ -96,7 +96,7 @@ export default function SoundsPage() {
           🌌 Phonics Galaxy
         </h1>
         <p style={{ color: '#7878aa', fontSize: '0.95rem' }}>
-          Tap any card to hear the sound · 106 phonics sounds
+          Tap any card to hear the sound · {SOUNDS.length} phonics sounds
         </p>
       </div>
 

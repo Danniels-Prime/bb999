@@ -6,7 +6,8 @@ export type Category =
   | 'Blends'
   | 'Vowel Teams'
   | 'R-Controlled'
-  | 'Word Endings';
+  | 'Word Endings'
+  | 'Diphthongs';
 
 export interface Sound {
   id: string;
@@ -25,6 +26,7 @@ export const CATEGORY_COLORS: Record<Category, string> = {
   'Vowel Teams': '#06b6d4',
   'R-Controlled': '#eab308',
   'Word Endings': '#ec4899',
+  'Diphthongs':  '#10b981',
 };
 
 export const CATEGORY_EMOJIS: Record<Category, string> = {
@@ -36,6 +38,7 @@ export const CATEGORY_EMOJIS: Record<Category, string> = {
   'Vowel Teams': '🩵',
   'R-Controlled': '🟡',
   'Word Endings': '🩷',
+  'Diphthongs':  '🟩',
 };
 
 export const CATEGORIES: Category[] = [
@@ -47,6 +50,7 @@ export const CATEGORIES: Category[] = [
   'Vowel Teams',
   'R-Controlled',
   'Word Endings',
+  'Diphthongs',
 ];
 
 export const SOUNDS: Sound[] = [
@@ -66,6 +70,21 @@ export const SOUNDS: Sound[] = [
   { id: 'sv-13', grapheme: 'ŭ', example: 'umbrella', category: 'Short Vowels', speech: 'umbrella' },
   { id: 'sv-14', grapheme: 'ŭ', example: 'uncle',    category: 'Short Vowels', speech: 'uncle' },
   { id: 'sv-15', grapheme: 'ŭ', example: 'up',       category: 'Short Vowels', speech: 'up' },
+  { id: 'sv-16', grapheme: 'ă', example: 'cat',      category: 'Short Vowels', speech: 'cat' },
+  { id: 'sv-17', grapheme: 'ă', example: 'bat',      category: 'Short Vowels', speech: 'bat' },
+  { id: 'sv-18', grapheme: 'ă', example: 'hat',      category: 'Short Vowels', speech: 'hat' },
+  { id: 'sv-19', grapheme: 'ĕ', example: 'bed',      category: 'Short Vowels', speech: 'bed' },
+  { id: 'sv-20', grapheme: 'ĕ', example: 'red',      category: 'Short Vowels', speech: 'red' },
+  { id: 'sv-21', grapheme: 'ĕ', example: 'ten',      category: 'Short Vowels', speech: 'ten' },
+  { id: 'sv-22', grapheme: 'ĭ', example: 'sit',      category: 'Short Vowels', speech: 'sit' },
+  { id: 'sv-23', grapheme: 'ĭ', example: 'hit',      category: 'Short Vowels', speech: 'hit' },
+  { id: 'sv-24', grapheme: 'ĭ', example: 'pin',      category: 'Short Vowels', speech: 'pin' },
+  { id: 'sv-25', grapheme: 'ŏ', example: 'hot',      category: 'Short Vowels', speech: 'hot' },
+  { id: 'sv-26', grapheme: 'ŏ', example: 'dog',      category: 'Short Vowels', speech: 'dog' },
+  { id: 'sv-27', grapheme: 'ŏ', example: 'mop',      category: 'Short Vowels', speech: 'mop' },
+  { id: 'sv-28', grapheme: 'ŭ', example: 'bug',      category: 'Short Vowels', speech: 'bug' },
+  { id: 'sv-29', grapheme: 'ŭ', example: 'sun',      category: 'Short Vowels', speech: 'sun' },
+  { id: 'sv-30', grapheme: 'ŭ', example: 'cup',      category: 'Short Vowels', speech: 'cup' },
 
   // Long Vowels (15)
   { id: 'lv-1',  grapheme: 'ā', example: 'ape',     category: 'Long Vowels', speech: 'ape' },
@@ -171,4 +190,14 @@ export const SOUNDS: Sound[] = [
   { id: 'we-8',  grapheme: '-ness', example: 'kindness', category: 'Word Endings', speech: 'kindness' },
   { id: 'we-9',  grapheme: '-ment', example: 'movement', category: 'Word Endings', speech: 'movement' },
   { id: 'we-10', grapheme: '-ly',   example: 'quickly',  category: 'Word Endings', speech: 'quickly' },
+
+  // Diphthongs (8)
+  { id: 'dp-1', grapheme: 'oi', example: 'coin',   category: 'Diphthongs', speech: 'coin' },
+  { id: 'dp-2', grapheme: 'oy', example: 'boy',    category: 'Diphthongs', speech: 'boy' },
+  { id: 'dp-3', grapheme: 'ou', example: 'cloud',  category: 'Diphthongs', speech: 'cloud' },
+  { id: 'dp-4', grapheme: 'ow', example: 'cow',    category: 'Diphthongs', speech: 'cow' },
+  { id: 'dp-5', grapheme: 'au', example: 'August', category: 'Diphthongs', speech: 'August' },
+  { id: 'dp-6', grapheme: 'aw', example: 'saw',    category: 'Diphthongs', speech: 'saw' },
+  { id: 'dp-7', grapheme: 'ew', example: 'dew',    category: 'Diphthongs', speech: 'dew' },
+  { id: 'dp-8', grapheme: 'oo', example: 'book',   category: 'Diphthongs', speech: 'book' },
 ];
